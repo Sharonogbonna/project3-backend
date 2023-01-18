@@ -4,6 +4,13 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 const db = mongoose.connection
 
+//models
+const AppTracker = require('./models/applications')
+//controllers
+const appController = require('./controllers/applications')
+//seed data
+const appData = require('./utilities/appData')
+
 //environmental variables
 const app = express()
 const mongoURI = process.env.MONGO_URI
@@ -26,8 +33,15 @@ app.use(express.static('public'))
 app.use(cors())
 
 //Routes
+app.use('/application', appController)
 
+//seed the data base
+app.get('/seed', async (req, res) => {
+    await AppTracker.deleteMany({});
+    await AppTracker.insertMany(appData);
+    res.send('done!');
+  });
 
 app.listen(3001, function() {
-    console.log('Listening', PORT)
+    console.log('Listening', port)
   })
