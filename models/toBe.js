@@ -5,7 +5,8 @@ const toBeSchema = new mongoose.Schema({
    author: String,
    platform: String,
    category: String, 
-   recommender: String
+   recommender: String,
+   done: Boolean
  })
  
  const toBe = mongoose.model('To be', toBeSchema)

@@ -5,7 +5,8 @@ const wishlistSchema = new mongoose.Schema({
    store: String,
    price: Number,
    reason: String,
-   link: String
+   link: String,
+   received: Boolean
  })
  
  const wishlist = mongoose.model('Wishe', wishlistSchema)

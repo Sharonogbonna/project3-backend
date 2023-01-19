@@ -3,6 +3,10 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 require('dotenv').config()
 const db = mongoose.connection
+const path = require('path')
+const session = require("express-session")
+const passport = require("passport")
+const LocalStrategy = require("passport-local").Strategy
 
 //models
 const AppTracker = require('./models/applications')
@@ -11,6 +15,7 @@ const Groceries = require('./models/groceries')
 const ToBe = require('./models/toBe')
 const Todos = require('./models/todos')
 const WishList= require('./models/wishlist')
+const User = require('./models/users')
 
 //controllers
 const appController = require('./controllers/applications')
@@ -49,14 +54,19 @@ app.use(express.json());
 // we need to tell express to use the public directory for static files... this way our app will find index.html as the route of the application! We can then attach React to that file!
 app.use(express.static('public')) 
 app.use(cors())
+//middleware for authentication
+app.use(session({ secret: "cats", resave: false, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(express.urlencoded({ extended: false }));
 //#endregion
 //Routes
-// app.use('/application', appController)
-// app.use('/groceries', groceryController)
-// app.use('/booklog', logController)
-// app.use('/tobe', toBeController)
-// app.use('/todos', todosController)
-// app.use('/wishlist', wishlistController)
+app.use('/applications', appController)
+app.use('/groceries', groceryController)
+app.use('/booklog', logController)
+app.use('/tobes', toBeController)
+app.use('/todos', todosController)
+app.use('/wishlist', wishlistController)
 
 //seed the data base
 app.get('/seed', async (req, res) => {

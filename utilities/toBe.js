@@ -5,6 +5,7 @@ const toBeData = [
     platform: "",
     category: "Book",
     recommender: "tiktok",
+    done: false
   },
   {
     title: "Things Fall Apart",
@@ -12,6 +13,7 @@ const toBeData = [
     platform: "",
     category: "Book",
     recommender: "Ling",
+    done: false
   },
   {
     title: "Animal Farm",
@@ -19,6 +21,7 @@ const toBeData = [
     platform: "",
     category: "Book",
     recommender: "Ling",
+    done: false
   },
   {
     title: "White Lotus Season 2",
@@ -26,6 +29,7 @@ const toBeData = [
     platform: "HBO Max",
     category: "Series",
     recommender: "Jag",
+    done: false
   },
 ];
 module.exports = toBeData
