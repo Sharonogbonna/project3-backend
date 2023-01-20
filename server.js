@@ -174,18 +174,18 @@ app.use("/wishlist", wishlistController);
 
 //seed the data base
 app.get("/seed", async (req, res) => {
-  await AppTracker.deleteMany({});
-  await AppTracker.insertMany(appData);
+//   await AppTracker.deleteMany({});
+//   await AppTracker.insertMany(appData);
   await Log.deleteMany({});
   await Log.insertMany(logData);
-  await Groceries.deleteMany({});
-  await Groceries.insertMany(groceryData);
-  await ToBe.deleteMany({});
-  await ToBe.insertMany(toBeData);
-  await Todos.deleteMany({});
-  await Todos.insertMany(todoData);
-  await WishList.deleteMany({});
-  await WishList.insertMany(wishlistData);
+//   await Groceries.deleteMany({});
+//   await Groceries.insertMany(groceryData);
+//   await ToBe.deleteMany({});
+//   await ToBe.insertMany(toBeData);
+//   await Todos.deleteMany({});
+//   await Todos.insertMany(todoData);
+//   await WishList.deleteMany({});
+//   await WishList.insertMany(wishlistData);
   res.send("done!");
 });
 

@@ -2,8 +2,8 @@ const logData =[
   {
     title: "We Were Liars",
     author: "E. Lockhart",
-    startDate: "2022-08-30",
-    endDate: "2022-09-03",
+    startDate: new Date("August 30, 2022"),
+    endDate: new Date("September 3, 2022"),
     rating: 2,
     summary:
       "Rich white famil with summer homes on a private island. The cousins meet every year until summer 15 when there is an accident. Cady can not remember what happened but she is determined to figure it out",
@@ -19,8 +19,8 @@ const logData =[
   {
     title: "Turtles All the Way Down",
     author: "John Green",
-    startDate: "2022-12-25",
-    endDate: "2022-12-30",
+    startDate: new Date("December 25, 2022"),
+    endDate: new Date("December 30, 2022"),
     rating: 3,
     summary:
       "A billionaire goes missing and it happens to be the father of Azas old friend. As they reconnect, we follow the journey of Aza as she tries to make sense of the world around an idea of her",
@@ -37,8 +37,8 @@ const logData =[
   {
     title: "An Assassin's Guide to Love and Treason",
     author: "Virginia Boecker",
-    startDate: "2023-01-08",
-    endDate: "2023-01-18",
+    startDate: new Date("January 8, 2023"),
+    endDate: new Date("January 18, 2023"),
     rating: 4,
     summary:
       "After her father is murdered for being a practicing catholic, she continues through with his plot to murder the queen. Fleeing disguised as a boy, she meets and falls in love with the spy mean to discover and arrest the assassin",
