@@ -64,6 +64,7 @@ app.use(express.json());
 // we need to tell express to use the public directory for static files... this way our app will find index.html as the route of the application! We can then attach React to that file!
 app.use(express.static("public"));
 app.use(cors());
+app.use(cors({ origin: '*' })) // used to whitelist requests
 
 //#region authenication middleware
 // //middleware for authentication
@@ -165,6 +166,9 @@ app.use(cors());
 //#endregion
 
 //regular routes
+app.get('/', (req, res) => {
+  res.render('This is the backend home page')
+})
 app.use("/applications", appController);
 app.use("/groceries", groceryController);
 app.use("/booklog", logController);
