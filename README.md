@@ -15,6 +15,14 @@ A Full Stack (MERN) Application with CRUD functionality. This project was inspir
 
 ## Screenshots
 
+#### To Do List Data
+![To list data](./public/todos.png)
+
+#### Application Tracker Data
+![application tracker data](./public/applications.png)
+
+#### Wishlist Data
+![wishlist data](./public/wishlist.png)
 
 ## Access
 
